@@ -1,5 +1,6 @@
 package org.example;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.example.config.FactoryConfiguration;
 import org.example.embed.FullName;
 import org.example.entity.Student;
@@ -12,11 +13,11 @@ import org.hibernate.Transaction;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(MysqlxDatatypes.Scalar.String[] args) {
 
         Session session = FactoryConfiguration.getInstance().getSession();
 
-        FullName fullName = new FullName("Sanduni","Pabasara");
+        FullName fullName = new FullName("Kamal","Perera");
         Student student = new Student();
         student.setId(6);
         student.setFullName(fullName);
@@ -33,7 +34,7 @@ public class Main {
         System.out.println(student1.toString());
 
         /*Teacher teacher = new Teacher();
-        FullName fullName1 = new FullName("Nimali","Perera");
+        FullName fullName1 = new FullName("Kasun","Perera");
 
         teacher.setId(1);
         teacher.setName(fullName1);
